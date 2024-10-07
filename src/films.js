@@ -39,6 +39,7 @@ function moviesAverageOfDirector(array, director) {
   // Exercise 4:  Alphabetic order by title 
   function orderAlphabetically(array) {
     let result = [...array].sort((a,b) => a.title.localeCompare(b.title))
+    
     let movieTitles = result.map((movie) => {
       return movie.title
     })
@@ -52,7 +53,12 @@ function moviesAverageOfDirector(array, director) {
   }
 
 // Exercise 5: Order by year, ascending
-function orderByYear() {
+function orderByYear(array) {
+  let result = [...array].sort((a, b) => a.year === b.year ? a.title.localeCompare(b.title) : a.year - b.year)
+
+  console.log("EXERCICE 5 -> ", result);
+
+  return result;
 
 }
 
