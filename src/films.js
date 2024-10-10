@@ -52,6 +52,7 @@ function moviesAverageOfDirector(array, director) {
   
   }
 
+
 // Exercise 5: Order by year, ascending
 function orderByYear(array) {
   let result = [...array].sort((a, b) => a.year === b.year ? a.title.localeCompare(b.title) : a.year - b.year)
@@ -61,6 +62,7 @@ function orderByYear(array) {
   return result;
 
 }
+
 
 // Exercise 6: Calculate the average of the movies in a category
 function moviesAverageByCategory(array, genre) {
@@ -74,23 +76,45 @@ function moviesAverageByCategory(array, genre) {
 
   let categoryAverage = (result.count > 0) ? parseFloat((result.totalScore / result.count).toFixed(2)) : 0;
 
-  
   console.log("EXERCICE 6 -> ", categoryAverage);
 
   return categoryAverage;
 }
 
-// Exercise 7: Modify the duration of movies to minutes
-function hoursToMinutes() {
 
+
+// Exercise 7: Modify the duration of movies to minutes
+function hoursToMinutes(array) {
+  let result = array.map((movie) => {
+    let movieCopy = { ...movie };
+    let [hours, minutes] = movieCopy.duration.split(' ');
+
+    if(!hours) {
+      hours = '0h'
+    }
+
+    if (!minutes) {
+      minutes = '0min'
+    }
+
+
+    hours = parseInt(hours.replace('h', ''));
+    minutes = parseInt(minutes.replace('min', ''));
+
+    let totalMinutes = (hours * 60) + minutes;
+    movieCopy.duration = totalMinutes;
+    return movieCopy;
+  });
+
+  return result;
 }
+
+
 
 // Exercise 8: Get the best film of a year
-function bestFilmOfYear() {
-  
-}
-
-
+  function bestFilmOfYear(array, year) {
+    
+  }
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */

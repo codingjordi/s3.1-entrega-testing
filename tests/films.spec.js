@@ -375,7 +375,7 @@ describe('Function "hoursToMinutes"', () => {
 
   it('should return an array of movies with the correct duration for a 2 hour movie', () => {
     const movieTry = [{ duration: '2h' }];
-    expect(hoursToMinutes(movieTry)[0].duration).toBe(120);
+    expect(hoursToMinutes(movieTry)[0].duration).toBe(120)
   });
 });
 
