@@ -120,8 +120,6 @@ function hoursToMinutes(array) {
     let allMoviesOfYear = result.sort((a, b) => b.score - a.score)
     
     const bestRatedByYear = allMoviesOfYear[0]
-
-    console.log('tipo de best rated peli: ', typeof bestRatedByYear)
     
     return bestRatedByYear ? [bestRatedByYear] : [];
   }
